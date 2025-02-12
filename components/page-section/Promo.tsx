@@ -11,7 +11,7 @@ import {
 export default function Promo() {
   return (
     <Container>
-      <div className="grid py-32 px-8 gap-2 ">
+      <div className="grid py-9 px-8 gap-2 ">
         <h1 className="text-2xl font-medium">Promo</h1>
         <h2 className="text-xl font-regular text-muted-foreground sm:flex lg:flex lg:flex-1">
           Dapatkan Penawaran Menarik
@@ -23,8 +23,10 @@ export default function Promo() {
               Nikmati diskon 15% untuk berbagai produk dan layanan favorit Anda.
             </CardDescription>
           </CardHeader>
-          <CardFooter>
-            <Button asChild>Halo</Button>
+          <CardFooter className="flex justify-start">
+            <Button className="text-sm/6 font-semibold bg-accent-blue-500 text-white hover:bg-white hover:text-accent-blue-500">
+              Contact Us
+            </Button>
           </CardFooter>
         </Card>
       </div>

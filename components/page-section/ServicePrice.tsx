@@ -53,7 +53,7 @@ export default function ServicePrice() {
 
   return (
     <Container>
-      <div className="grid py-32 px-8 gap-2">
+      <div className="grid py-9 px-8 gap-2 ">
         <h1 className="text-2xl font-medium max-w-sm">Layanan Spesial</h1>
         <h2 className="text-xl font-regular max-w-80 text-muted-foreground sm:flex lg:flex lg:flex-1">
           Temukan solusi efektif dan efisien bersama kami!
@@ -63,7 +63,7 @@ export default function ServicePrice() {
             {Array.from(dataPrice).map((item, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="max-w-80 bg-white mt-8 shadow-xl lg:max-w-md border-2 border-accent-blue-500">
+                  <Card className="max-w-80 bg-white mt-8 shadow-md lg:max-w-md border-6 border-muted">
                     <CardHeader>
                       <CardTitle className="text-accent-blue-500">
                         {item.title}
