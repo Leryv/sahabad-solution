@@ -161,7 +161,7 @@ export default function Hero() {
                 className="bg-white hover:bg-accent-blue-700 text-blue-500 focus:stroke-blue-400"
                 asChild
               >
-                <Link href={"/"}>Let's See</Link>
+                <Link href={"/"}>Let&apos;s See</Link>
               </Button>
             </div>
           </div>
