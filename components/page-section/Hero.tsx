@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const navigation = [
   { name: "Service", href: "#" },
@@ -20,11 +21,13 @@ const navigation = [
 const LogoComponent = () => {
   return (
     <div className="flex lg:flex-1">
-      <Link href="/" className="-m-1.5 p-1.5">
+      <Link href="/" className="-m-1.5 p-1.5 ">
         <span className="sr-only">Your Company</span>
-        <img
+        <Image
           alt=""
           src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+          width={32} // Specify the width here
+          height={32} // Specify the height here
           className="h-8 w-auto"
         />
       </Link>
@@ -48,9 +51,11 @@ const HeroDrawer = () => {
               <Button>
                 <Link href="/">
                   <span className="sr-only">Your Company</span>
-                  <img
+                  <Image
                     alt=""
                     src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+                    width={32} // Specify the width here
+                    height={32} // Specify the height here
                     className="h-8 w-auto"
                   />
                 </Link>
@@ -90,13 +95,13 @@ const HeroNavBar = () => {
   return (
     <div className="hidden lg:flex lg:gap-x-12">
       {navigation.map((item) => (
-        <a
+        <Link
           key={item.name}
           href={item.href}
           className="text-sm/6 font-semibold text-white "
         >
           {item.name}
-        </a>
+        </Link>
       ))}
     </div>
   );
