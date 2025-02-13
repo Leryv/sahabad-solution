@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Card,
   CardContent,
@@ -51,6 +53,10 @@ export default function ServicePrice() {
     },
   ];
 
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  );
+
   return (
     <Container>
       <div className="grid py-9 px-8 gap-2 ">
@@ -58,18 +64,24 @@ export default function ServicePrice() {
         <h2 className="text-xl font-regular max-w-80 text-muted-foreground sm:flex lg:flex lg:flex-1">
           Temukan solusi efektif dan efisien bersama kami!
         </h2>
-        <Carousel className="w-full mx-auto max-w-80 lg:max-w-screen">
+        <Carousel
+          className="w-full mx-auto max-w-60 lg:max-w-screen"
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{ loop: true }}
+        >
           <CarouselContent>
             {Array.from(dataPrice).map((item, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
-                  <Card className="max-w-80 bg-white mt-8 shadow-md lg:max-w-md border-6 border-muted">
+                  <Card className="max-w-96 bg-white mt-8 shadow-md lg:max-w-md border-6 border-muted">
                     <CardHeader>
                       <CardTitle className="text-accent-blue-500">
                         {item.title}
                       </CardTitle>
                       <CardDescription>{item.desc}</CardDescription>
-                      <CardContent className="mx-auto px-0 py-4 text-xl font-bold lg:text-2xl my-2">
+                      <CardContent className="mx-auto px-0 py-4 text-sm font-extrabold lg:text-2xl my-2 lg:font-bold">
                         {item.priceNotFix ? (
                           <>Rp. {item.priceNotFix}</>
                         ) : (
@@ -93,8 +105,10 @@ export default function ServicePrice() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="flex lg:hidden" />
-          <CarouselNext className="flex lg:hidden" />
+          <div className="z-100">
+            <CarouselPrevious className="flex   overflow-y-auto lg:hidden" />
+            <CarouselNext className="flex   overflow-y-auto lg:hidden" />
+          </div>
         </Carousel>
       </div>
     </Container>
