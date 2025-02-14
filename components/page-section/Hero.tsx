@@ -121,7 +121,7 @@ const ButtonNavBarHero = () => {
 
 export default function Hero() {
   return (
-    <div className="bg-accent-blue-600">
+    <section className="bg-accent-blue-600">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"
@@ -179,6 +179,6 @@ export default function Hero() {
           />
         </div> */}
       </div>
-    </div>
+    </section>
   );
 }

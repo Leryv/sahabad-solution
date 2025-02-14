@@ -59,9 +59,14 @@ export default function ServicePrice() {
 
   return (
     <Container>
-      <div className="grid py-9 px-8 gap-2 ">
-        <h1 className="text-2xl font-medium max-w-sm">Layanan Spesial</h1>
-        <h2 className="text-xl font-regular max-w-80 text-muted-foreground sm:flex lg:flex lg:flex-1">
+      <section className="grid py-18 px-8 gap-2 ">
+        <h3 className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
+          Special Service
+        </h3>
+        <h1 className="text-2xl text-gray-800 md:text-3xl font-medium max-w-md">
+          Layanan Spesial
+        </h1>
+        <h2 className="font-regular text-muted-foreground sm:flex lg:flex lg:flex-1">
           Temukan solusi efektif dan efisien bersama kami!
         </h2>
         <Carousel
@@ -73,7 +78,7 @@ export default function ServicePrice() {
         >
           <CarouselContent>
             {Array.from(dataPrice).map((item, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="max-w-96 bg-white mt-8 shadow-md lg:max-w-md border-6 border-muted">
                     <CardHeader>
@@ -86,7 +91,7 @@ export default function ServicePrice() {
                           <>Rp. {item.priceNotFix}</>
                         ) : (
                           <>
-                            Rp.{item.priceAwal} - Rp{item.priceAkhir}
+                            Rp.{item.priceAwal} - {item.priceAkhir}
                           </>
                         )}
                       </CardContent>
@@ -110,7 +115,7 @@ export default function ServicePrice() {
             <CarouselNext className="flex   overflow-y-auto lg:hidden" />
           </div>
         </Carousel>
-      </div>
+      </section>
     </Container>
   );
 }
