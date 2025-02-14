@@ -106,11 +106,14 @@ export default function Testimonial() {
 
   return (
     <Container>
-      <section className="bg-white dark:bg-gray-900 h-215 lg:h-220">
+      <section
+        id="experience"
+        className="bg-white dark:bg-gray-900 h-215 lg:h-220"
+      >
         <div className="py-12 lg:py-18 px-8">
           <div>
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
-              Testimonial
+              Experience
             </p>
             <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
               Apa Yang Customer kami katakan

@@ -11,7 +11,7 @@ import {
 export default function Promo() {
   return (
     <Container>
-      <div className="grid py-18 px-8 gap-2 ">
+      <div id="promo" className="grid py-18 px-8 gap-2 ">
         <h1 className="text-2xl md:text-3xl text-gray-800 font-medium">
           Promo
         </h1>

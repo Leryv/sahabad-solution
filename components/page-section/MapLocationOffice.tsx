@@ -34,7 +34,7 @@ export default function MapLocationOffice() {
 
   return (
     <Container>
-      <div className="py-12 lg:py-18 px-8 gap-2 h-150 lg:h-200">
+      <div id="location" className="py-12 lg:py-18 px-8 gap-2 h-150 lg:h-200">
         <div>
           <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400 ">
             Lokasi

@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 export default function Contact() {
   return (
     <Container>
-      <section className="bg-white dark:bg-gray-900">
+      <section id="contact" className="bg-white dark:bg-gray-900">
         <div className="py-18 px-8 h-230 lg:h-130">
           <div>
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">

@@ -16,9 +16,10 @@ import LogoTulisan from "@/public/hero/logo_tulisan_1000x1000.png";
 import { Card } from "../ui/card";
 
 const navigation = [
-  { name: "Service", href: "#" },
-  { name: "Experience", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Service", href: "#service" },
+  { name: "Experience", href: "#experience" },
+  { name: "Contact", href: "#contact" },
+  { name: "Map", href: "#location" },
   // { name: "Company", href: "#" },
 ];
 
@@ -124,7 +125,7 @@ const ButtonNavBarHero = () => {
 
 export default function Hero() {
   return (
-    <section className="bg-accent-blue-600">
+    <section id="hero" className="bg-accent-blue-600">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           aria-label="Global"

@@ -59,7 +59,7 @@ export default function ServicePrice() {
 
   return (
     <Container>
-      <section className="grid py-18 px-8 gap-2 ">
+      <section id="service" className="grid py-18 px-8 gap-2 ">
         <h3 className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
           Special Service
         </h3>
