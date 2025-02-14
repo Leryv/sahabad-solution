@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { StarIcon } from "@heroicons/react/20/solid";
@@ -104,6 +104,25 @@ export default function Testimonial() {
     Autoplay({ delay: 3000, stopOnInteraction: true })
   );
 
+  const [itemsPerSlide, setItemsPerSlide] = useState(1); // Default for mobile
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsPerSlide(window.innerWidth < 768 ? 1 : 2);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Container>
       <section
@@ -131,18 +150,14 @@ export default function Testimonial() {
                   >
                     <CarouselContent>
                       {Array.from({
-                        length: Math.ceil(
-                          dataTestimoni.length /
-                            (window.innerWidth < 768 ? 1 : 2)
-                        ),
+                        length: Math.ceil(dataTestimoni.length / itemsPerSlide),
                       }).map((_, index) => (
                         <CarouselItem key={index}>
                           <div className="flex justify-between">
                             {dataTestimoni
                               .slice(
-                                index * (window.innerWidth < 768 ? 1 : 2),
-                                index * (window.innerWidth < 768 ? 1 : 2) +
-                                  (window.innerWidth < 768 ? 1 : 2)
+                                index * itemsPerSlide,
+                                index * itemsPerSlide + itemsPerSlide
                               )
                               .map((item) => (
                                 <RatingComponent
