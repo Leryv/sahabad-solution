@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <Container>
       <section className="bg-white dark:bg-gray-900">
-        <div className="py-18 px-8 h-200 lg:h-130">
+        <div className="py-18 px-8 h-230 lg:h-130">
           <div>
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
               Contact us
@@ -44,10 +44,10 @@ export default function Contact() {
                 Email
               </h2>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Our friendly team is here to help.
+                🌟 Tim Kami Siap Membantu Anda! 🌟
               </p>
               <p className="mt-2 text-accent-blue-500 dark:text-accent-blue-400">
-                hello@merakiui.com
+                sahabadfurniture@gmail.com
               </p>
             </div>
 
@@ -78,10 +78,10 @@ export default function Contact() {
                 Office
               </h2>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Come say hello at our office HQ.
+                🌟 Kunjungi Kantor Kami! 🌟
               </p>
               <p className="mt-2 text-accent-blue-500 dark:text-accent-blue-400">
-                100 Smith Street Collingwood VIC 3066 AU
+                Perumahan Mustika Grande, Setu, Kabupaten Bekasi, Indonesia
               </p>
             </div>
 
@@ -107,10 +107,10 @@ export default function Contact() {
                 Phone
               </h2>
               <p className="mt-2 text-gray-500 dark:text-gray-400">
-                Mon-Fri from 8am to 5pm.
+                🌟 Senin - Jumat dari Jam 8 Pagi Sampai jam 5 Malam. 🌟
               </p>
               <p className="mt-2 text-accent-blue-500 dark:text-accent-blue-400">
-                +1 (555) 000-0000
+                +62 895-3868-49956
               </p>
             </div>
           </div>

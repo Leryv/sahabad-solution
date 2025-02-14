@@ -34,19 +34,19 @@ export default function MapLocationOffice() {
 
   return (
     <Container>
-      <div className="grid py-18 px-8 gap-2 h-200">
+      <div className="py-12 lg:py-18 px-8 gap-2 h-150 lg:h-200">
         <div>
-          <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
-            Office
+          <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400 ">
+            Lokasi
           </p>
 
-          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
-            Our Office Location
+          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white ">
+            Lokasi Kantor Kami
           </h1>
         </div>
 
-        <Card className="h-150 w-full max-w-8xl mt-10 shadow-lg p-4 mb-20">
-          <div ref={mapContainer} className="w-full h-full" />
+        <Card className="h-100 lg:h-150 w-full max-w-8xl mt-10 shadow-lg p-4">
+          <div ref={mapContainer} className="w-full h-full " />
         </Card>
       </div>
     </Container>

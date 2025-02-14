@@ -1,8 +1,10 @@
 "use client";
 import Contact from "@/components/page-section/Contact";
+import Footer from "@/components/page-section/Footer";
 import Hero from "@/components/page-section/Hero";
 import Promo from "@/components/page-section/Promo";
 import ServicePrice from "@/components/page-section/ServicePrice";
+import Testimonial from "@/components/page-section/Testimonial";
 import dynamic from "next/dynamic";
 
 export default function Home() {
@@ -18,8 +20,10 @@ export default function Home() {
       <Hero />
       <Promo />
       <ServicePrice />
+      <Testimonial />
       <Contact />
       <MapLocationOffice />
+      <Footer />
     </div>
   );
 }

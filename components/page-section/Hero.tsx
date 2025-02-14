@@ -11,6 +11,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
+import LogoSimple from "@/public/hero/logo_simple.png";
+import LogoTulisan from "@/public/hero/logo_tulisan_1000x1000.png";
+import { Card } from "../ui/card";
+
 const navigation = [
   { name: "Service", href: "#" },
   { name: "Experience", href: "#" },
@@ -21,16 +25,15 @@ const navigation = [
 const LogoComponent = () => {
   return (
     <div className="flex lg:flex-1">
-      <Link href="/" className="-m-1.5 p-1.5 ">
-        <span className="sr-only">Your Company</span>
-        <Image
-          alt=""
-          src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-          width={32} // Specify the width here
-          height={32} // Specify the height here
-          className="h-8 w-auto"
-        />
-      </Link>
+      <Card className="">
+        <Link
+          href="/"
+          // className="-m-1.5 p-1.5"
+        >
+          <span className="sr-only">Your Company</span>
+          <Image alt="" src={LogoTulisan} className="h-12 w-25" />
+        </Link>
+      </Card>
     </div>
   );
 };
@@ -48,18 +51,18 @@ const HeroDrawer = () => {
         <DialogContent className="fixed  right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <DialogTitle>
-              <Button>
+              <Card className="p-4">
                 <Link href="/">
                   <span className="sr-only">Your Company</span>
                   <Image
                     alt=""
-                    src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                    width={32} // Specify the width here
-                    height={32} // Specify the height here
-                    className="h-8 w-auto"
+                    src={LogoSimple}
+                    width={80} // Specify the width here
+                    height={80} // Specify the height here
+                    className="h-12 w-10"
                   />
                 </Link>
-              </Button>
+              </Card>
             </DialogTitle>
           </div>
           <div className="mt-6 flow-root">
@@ -75,14 +78,14 @@ const HeroDrawer = () => {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <Link
                   href="/"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
                   Log in
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </DialogContent>

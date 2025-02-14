@@ -54,7 +54,7 @@ export default function ServicePrice() {
   ];
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
@@ -70,7 +70,7 @@ export default function ServicePrice() {
           Temukan solusi efektif dan efisien bersama kami!
         </h2>
         <Carousel
-          className="w-full mx-auto max-w-60 lg:max-w-screen"
+          className="w-full mx-auto max-w-60 md:max-w-2xl lg:max-w-screen" // Adjust max width for larger screens
           plugins={[plugin.current]}
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
