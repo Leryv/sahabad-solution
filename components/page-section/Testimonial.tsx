@@ -94,8 +94,8 @@ const RatingComponent = ({
         />
         <div className="text-sm leading-6">
           <div className="font-semibold text-gray-900">{name}</div>
-          <div className="mt-0.5 text-gray-600">{from}</div>
-          <div className="hidden">{orderHistory}</div>
+          <div className="mt-0.5 text-gray-600">{orderHistory}</div>
+          <div className="hidden">{from}</div>
         </div>
       </figcaption>
     </div>
