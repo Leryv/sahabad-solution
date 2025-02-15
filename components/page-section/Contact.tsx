@@ -65,7 +65,8 @@ const CardContact = () => {
     {
       id: 3,
       contactType: "Phone",
-      contactDesc: "🌟 Senin - Jumat dari Jam 8 Pagi Sampai jam 5 Malam. 🌟",
+      contactDesc:
+        "🌟 Anda Bisa Konsultasi Tentang Furniture Anda kepada Kami 24 Jam 🌟",
       contactContent: "+62 895-3868-49956",
 
       svgIcon: (
