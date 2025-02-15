@@ -88,7 +88,7 @@ export default function ServicePrice() {
             opts={{ loop: true }}
           >
             <CarouselContent>
-              {Array.from(dataPrice).map((item, index) => (
+              {Array.from(dataPrice).map((item) => (
                 <CarouselItem
                   key={item.id}
                   className="md:basis-1/2 lg:basis-1/3"

@@ -12,47 +12,48 @@ import {
 import Image1 from "@/public/customer/user2.webp";
 import Image2 from "@/public/customer/user3.webp";
 import Image3 from "@/public/customer/user4.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "motion/react";
 
 interface DataTestimoni {
+  // id: number;
   name: string;
   from: string;
   comment: string;
-  orderHistory: string;
+  // orderHistory: string;
   jumlahBintang: number;
-  img: any;
+  img: StaticImageData;
 }
 
-const dataTestimoni = [
+const dataTestimoni: DataTestimoni[] = [
   {
-    id: 1,
+    // id: 1,
     name: "Rezia Lesti",
     from: "Google Maps Review",
     comment:
       "satsetsatset yg ngerakit dipan gapake lamaa worth it lahh mana dikasih gratis kaki kakiannya 🥹🥹 …",
-    orderHistory: "Pribadi, Instalasi Satu Unit",
+    // orderHistory: "Pribadi, Instalasi Satu Unit",
     jumlahBintang: 5,
     img: Image1,
   },
   {
-    id: 2,
+    // id: 2,
     name: "Valen Idealistino",
     from: "Google Maps Review",
     comment:
       "admin fast response, tukangnya udah profesional sejam selesai, harga murah meriah cuma 150 rb",
-    orderHistory: "Pribadi, Instalasi Satu Unit",
+    // orderHistory: "Pribadi, Instalasi Satu Unit",
     jumlahBintang: 5,
     img: Image2,
   },
   {
-    id: 3,
+    // id: 3,
     name: "Grace",
     from: "Google Maps Review",
     comment:
       "admin fast response, tukangnya udah profesional sejam selesai, harga murah meriah cuma 150 rb",
-    orderHistory: "Pribadi, Instalasi Satu Unit",
+    // orderHistory: "Pribadi, Instalasi Satu Unit",
     jumlahBintang: 5,
     img: Image3,
   },
@@ -62,7 +63,7 @@ const RatingComponent = ({
   name,
   from,
   comment,
-  orderHistory,
+  // orderHistory,
   jumlahBintang,
   img,
 }: DataTestimoni) => {
@@ -187,7 +188,7 @@ export default function Testimonial() {
                           // Create a unique key based on the first item's ID in the slice
                           const carouselItemKey =
                             itemsToDisplay.length > 0
-                              ? `carousel-item-${itemsToDisplay[0].id}`
+                              ? `carousel-item-${itemsToDisplay[0].name}`
                               : `carousel-item-${index}`;
 
                           return (
@@ -195,11 +196,11 @@ export default function Testimonial() {
                               <div className="flex justify-between">
                                 {itemsToDisplay.map((item) => (
                                   <RatingComponent
-                                    key={item.id} // Unique key for RatingComponent
+                                    key={item.name} // Unique key for RatingComponent
                                     name={item.name}
                                     from={item.from}
                                     comment={item.comment}
-                                    orderHistory={item.orderHistory}
+                                    // orderHistory={item.orderHistory}
                                     jumlahBintang={item.jumlahBintang}
                                     img={item.img}
                                   />
