@@ -71,7 +71,7 @@ export default function ServicePrice() {
             className="grid gap-2"
           >
             <h3 className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
-              Special Service
+              Layanan
             </h3>
             <h1 className="text-2xl text-gray-800 md:text-3xl font-medium max-w-md">
               Layanan Spesial

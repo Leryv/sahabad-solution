@@ -145,10 +145,10 @@ export default function Testimonial() {
             viewport={{ once: true }} // Optional: makes it animate only once
           >
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
-              Experience
+              Pengalaman
             </p>
             <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">
-              Apa Yang Customer kami katakan
+              Apa Yang Customer kami katakan Tentang Kami
             </h1>
             <Card className="w-full max-h-lg max-w-8xl mt-10 shadow-lg mb-20">
               <CardHeader>

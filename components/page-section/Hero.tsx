@@ -16,10 +16,10 @@ import LogoTulisan from "@/public/hero/logo_tulisan_1000x1000.png";
 import { Card } from "../ui/card";
 
 const navigation = [
-  { name: "Service", href: "#service" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
-  { name: "Map", href: "#location" },
+  { name: "Layanan", href: "#service" },
+  { name: "Pengalaman", href: "#experience" },
+  { name: "Kontak", href: "#contact" },
+  { name: "Lokasi", href: "#location" },
 ];
 
 const LogoComponent = () => {
@@ -153,7 +153,7 @@ export default function Hero() {
           </div>
           <div className="text-center">
             <h1 className="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl sm:leading-24">
-              Furniture Dreams Meet Expert Touch
+              Sentuhan Ahli untuk Furniture Impian Anda!
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
               Kami menawarkan layanan pemasangan furniture profesional untuk

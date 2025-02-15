@@ -122,7 +122,7 @@ export default function Contact() {
         >
           <div>
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
-              Contact us
+              Kontak
             </p>
 
             <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">

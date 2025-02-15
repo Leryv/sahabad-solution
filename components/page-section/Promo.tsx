@@ -29,7 +29,7 @@ export default function Promo() {
           </h2>
           <Card className="max-w-2xl bg-white mt-8 shadow-xl ">
             <CardHeader>
-              <CardTitle>Spring Break Specials</CardTitle>
+              <CardTitle>Promo Menjelang Bulan Ramadhan</CardTitle>
               <CardDescription>
                 Nikmati diskon 15% untuk berbagai produk dan layanan favorit
                 Anda.
