@@ -14,6 +14,7 @@ import Image2 from "@/public/customer/user3.webp";
 import Image3 from "@/public/customer/user4.png";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { AnimatePresence, motion } from "motion/react";
 
 interface DataTestimoni {
   name: string;
@@ -105,6 +106,7 @@ export default function Testimonial() {
   );
 
   const [itemsPerSlide, setItemsPerSlide] = useState(1); // Default for mobile
+  const [isLoading, setIsLoading] = useState(true); // Loading state
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,9 +119,14 @@ export default function Testimonial() {
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); // 1 second delay
+
     // Clean up on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(timeout);
     };
   }, []);
 
@@ -130,7 +137,12 @@ export default function Testimonial() {
         className="bg-white dark:bg-gray-900 h-215 lg:h-220"
       >
         <div className="py-12 lg:py-18 px-8">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }} // Start off-screen to the right
+            whileInView={{ opacity: 1, x: 0 }} // Fade in and move to original position
+            transition={{ duration: 1, ease: "easeInOut" }} // Transition properties
+            viewport={{ once: true }} // Optional: makes it animate only once
+          >
             <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400">
               Experience
             </p>
@@ -149,30 +161,46 @@ export default function Testimonial() {
                     opts={{ loop: true }}
                   >
                     <CarouselContent>
-                      {Array.from({
-                        length: Math.ceil(dataTestimoni.length / itemsPerSlide),
-                      }).map((_, index) => (
-                        <CarouselItem key={index}>
-                          <div className="flex justify-between">
-                            {dataTestimoni
-                              .slice(
-                                index * itemsPerSlide,
-                                index * itemsPerSlide + itemsPerSlide
-                              )
-                              .map((item) => (
-                                <RatingComponent
-                                  key={item.id}
-                                  name={item.name}
-                                  from={item.from}
-                                  comment={item.comment}
-                                  orderHistory={item.orderHistory}
-                                  jumlahBintang={item.jumlahBintang}
-                                  img={item.img}
-                                />
-                              ))}
+                      {isLoading ? (
+                        // Loading animation
+                        <CarouselItem>
+                          <div className="animate-pulse flex space-x-4">
+                            <div className="flex-1 space-y-4 py-1">
+                              <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+                              <div className="h-4 bg-gray-300 rounded w-1/2"></div>
+                              <div className="h-4 bg-gray-300 rounded w-2/3"></div>
+                              <div className="h-4 bg-gray-300 rounded w-1/4"></div>
+                            </div>
                           </div>
                         </CarouselItem>
-                      ))}
+                      ) : (
+                        Array.from({
+                          length: Math.ceil(
+                            dataTestimoni.length / itemsPerSlide
+                          ),
+                        }).map((_, index) => (
+                          <CarouselItem key={index}>
+                            <div className="flex justify-between">
+                              {dataTestimoni
+                                .slice(
+                                  index * itemsPerSlide,
+                                  index * itemsPerSlide + itemsPerSlide
+                                )
+                                .map((item) => (
+                                  <RatingComponent
+                                    key={item.id}
+                                    name={item.name}
+                                    from={item.from}
+                                    comment={item.comment}
+                                    orderHistory={item.orderHistory}
+                                    jumlahBintang={item.jumlahBintang}
+                                    img={item.img}
+                                  />
+                                ))}
+                            </div>
+                          </CarouselItem>
+                        ))
+                      )}
                     </CarouselContent>
                     <CarouselPrevious className="flex overflow-y-auto lg:hidden" />
                     <CarouselNext className="flex overflow-y-auto lg:hidden" />
@@ -180,7 +208,7 @@ export default function Testimonial() {
                 </CardContent>
               </CardHeader>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </section>
     </Container>

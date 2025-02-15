@@ -4,6 +4,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css"; // See notes below
 import { Card } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
+import { motion } from "motion/react";
 
 export default function MapLocationOffice() {
   const mapContainer = useRef<HTMLDivElement | null>(null);
@@ -35,7 +36,12 @@ export default function MapLocationOffice() {
   return (
     <Container>
       <div id="location" className="py-12 lg:py-18 px-8 gap-2 h-150 lg:h-200">
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: -50 }} // Start off-screen to the right
+          whileInView={{ opacity: 1, x: 0 }} // Fade in and move to original position
+          transition={{ duration: 1, ease: "easeInOut" }} // Transition properties
+          viewport={{ once: true }} // Optional: makes it animate only once
+        >
           <p className="font-medium text-accent-blue-500 dark:text-accent-blue-400 ">
             Lokasi
           </p>
@@ -43,7 +49,7 @@ export default function MapLocationOffice() {
           <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white ">
             Lokasi Kantor Kami
           </h1>
-        </div>
+        </motion.div>
 
         <Card className="h-100 lg:h-150 w-full max-w-8xl mt-10 shadow-lg p-4">
           <div ref={mapContainer} className="w-full h-full " />

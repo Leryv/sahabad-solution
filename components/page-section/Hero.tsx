@@ -20,7 +20,6 @@ const navigation = [
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
   { name: "Map", href: "#location" },
-  // { name: "Company", href: "#" },
 ];
 
 const LogoComponent = () => {
@@ -162,10 +161,10 @@ export default function Hero() {
             </p>
             <div className="mt-20 flex items-center justify-center gap-x-6">
               <Button
-                className="bg-white hover:bg-accent-blue-700 text-blue-500 focus:stroke-blue-400"
+                className="text-sm/6 font-semibold bg-white text-accent-blue-500 hover:bg-accent-blue-500 hover:text-white"
                 asChild
               >
-                <Link href={"/"}>Let&apos;s See</Link>
+                <Link href={"#promo"}>Let&apos;s See</Link>
               </Button>
             </div>
           </div>
