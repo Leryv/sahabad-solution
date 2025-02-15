@@ -14,7 +14,7 @@ import Image2 from "@/public/customer/user3.webp";
 import Image3 from "@/public/customer/user4.png";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 
 interface DataTestimoni {
   name: string;
@@ -178,17 +178,24 @@ export default function Testimonial() {
                           length: Math.ceil(
                             dataTestimoni.length / itemsPerSlide
                           ),
-                        }).map((_, index) => (
-                          <CarouselItem key={index}>
-                            <div className="flex justify-between">
-                              {dataTestimoni
-                                .slice(
-                                  index * itemsPerSlide,
-                                  index * itemsPerSlide + itemsPerSlide
-                                )
-                                .map((item) => (
+                        }).map((_, index) => {
+                          const itemsToDisplay = dataTestimoni.slice(
+                            index * itemsPerSlide,
+                            index * itemsPerSlide + itemsPerSlide
+                          );
+
+                          // Create a unique key based on the first item's ID in the slice
+                          const carouselItemKey =
+                            itemsToDisplay.length > 0
+                              ? `carousel-item-${itemsToDisplay[0].id}`
+                              : `carousel-item-${index}`;
+
+                          return (
+                            <CarouselItem key={carouselItemKey}>
+                              <div className="flex justify-between">
+                                {itemsToDisplay.map((item) => (
                                   <RatingComponent
-                                    key={item.id}
+                                    key={item.id} // Unique key for RatingComponent
                                     name={item.name}
                                     from={item.from}
                                     comment={item.comment}
@@ -197,9 +204,10 @@ export default function Testimonial() {
                                     img={item.img}
                                   />
                                 ))}
-                            </div>
-                          </CarouselItem>
-                        ))
+                              </div>
+                            </CarouselItem>
+                          );
+                        })
                       )}
                     </CarouselContent>
                     <CarouselPrevious className="flex overflow-y-auto lg:hidden" />
