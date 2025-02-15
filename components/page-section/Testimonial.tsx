@@ -21,7 +21,7 @@ interface DataTestimoni {
   name: string;
   from: string;
   comment: string;
-  // orderHistory: string;
+  orderHistory: string;
   jumlahBintang: number;
   img: StaticImageData;
 }
@@ -33,7 +33,7 @@ const dataTestimoni: DataTestimoni[] = [
     from: "Google Maps Review",
     comment:
       "satsetsatset yg ngerakit dipan gapake lamaa worth it lahh mana dikasih gratis kaki kakiannya 🥹🥹 …",
-    // orderHistory: "Pribadi, Instalasi Satu Unit",
+    orderHistory: "Single Item Installation",
     jumlahBintang: 5,
     img: Image1,
   },
@@ -43,7 +43,7 @@ const dataTestimoni: DataTestimoni[] = [
     from: "Google Maps Review",
     comment:
       "admin fast response, tukangnya udah profesional sejam selesai, harga murah meriah cuma 150 rb",
-    // orderHistory: "Pribadi, Instalasi Satu Unit",
+    orderHistory: "Multi Unit Projects",
     jumlahBintang: 5,
     img: Image2,
   },
@@ -53,7 +53,7 @@ const dataTestimoni: DataTestimoni[] = [
     from: "Google Maps Review",
     comment:
       "admin fast response, tukangnya udah profesional sejam selesai, harga murah meriah cuma 150 rb",
-    // orderHistory: "Pribadi, Instalasi Satu Unit",
+    orderHistory: "Single Item Installation",
     jumlahBintang: 5,
     img: Image3,
   },
@@ -63,7 +63,7 @@ const RatingComponent = ({
   name,
   from,
   comment,
-  // orderHistory,
+  orderHistory,
   jumlahBintang,
   img,
 }: DataTestimoni) => {
@@ -95,6 +95,7 @@ const RatingComponent = ({
         <div className="text-sm leading-6">
           <div className="font-semibold text-gray-900">{name}</div>
           <div className="mt-0.5 text-gray-600">{from}</div>
+          <div className="hidden">{orderHistory}</div>
         </div>
       </figcaption>
     </div>
@@ -200,7 +201,7 @@ export default function Testimonial() {
                                     name={item.name}
                                     from={item.from}
                                     comment={item.comment}
-                                    // orderHistory={item.orderHistory}
+                                    orderHistory={item.orderHistory}
                                     jumlahBintang={item.jumlahBintang}
                                     img={item.img}
                                   />
