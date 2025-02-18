@@ -1,6 +1,8 @@
 import React, { JSX } from "react";
 import { Container } from "@/components/ui/container";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const CardContact = () => {
   interface DataContact {
@@ -9,6 +11,7 @@ const CardContact = () => {
     contactDesc: string;
     contactContent: string;
     svgIcon: JSX.Element;
+    href: string;
   }
 
   const dataContact: DataContact[] = [
@@ -33,6 +36,7 @@ const CardContact = () => {
           />
         </svg>
       ),
+      href: "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=sahabadfurniture@gmail.com",
     },
     {
       id: 2,
@@ -61,6 +65,7 @@ const CardContact = () => {
           />
         </svg>
       ),
+      href: "https://maps.app.goo.gl/tFFLmjQjRBhaEU8R9",
     },
     {
       id: 3,
@@ -85,6 +90,7 @@ const CardContact = () => {
           />
         </svg>
       ),
+      href: "https://wa.link/h59bw0",
     },
   ];
 
@@ -102,7 +108,9 @@ const CardContact = () => {
             {item.contactDesc}
           </p>
           <p className="mt-2 text-accent-blue-500 dark:text-accent-blue-400">
-            {item.contactContent}
+            <Button className="text-sm/6 font-semibold bg-accent-blue-500 text-white hover:bg-white hover:text-accent-blue-500">
+              <Link href={item.href}>{item.contactContent}</Link>
+            </Button>
           </p>
         </div>
       ))}
