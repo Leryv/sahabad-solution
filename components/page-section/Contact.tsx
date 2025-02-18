@@ -42,8 +42,7 @@ const CardContact = () => {
       id: 2,
       contactType: "Office",
       contactDesc: "🌟 Kunjungi Kantor Kami! 🌟",
-      contactContent:
-        "Perumahan Mustika Grande, Setu, Kabupaten Bekasi, Indonesia",
+      contactContent: "Setu, Kabupaten Bekasi, Indonesia",
       svgIcon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +94,7 @@ const CardContact = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-12 mt-10 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-12 mt-10 mb-10 md:grid-cols-2 lg:mb-0 lg:grid-cols-3">
       {Array.from(dataContact).map((item) => (
         <div key={item.id}>
           <span className="inline-block p-3 text-accent-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
