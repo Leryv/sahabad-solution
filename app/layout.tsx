@@ -74,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleTagManager gtmId="G-6SC1W1CRFS" />
+      <GoogleTagManager gtmId={process.env.GOOGLE_TAG || ""} />
       <body className={`${notoSans.variable} ${notoMono.variable} antialiased`}>
         {children}
       </body>
