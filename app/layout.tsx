@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -73,6 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="G-6SC1W1CRFS" />
       <body className={`${notoSans.variable} ${notoMono.variable} antialiased`}>
         {children}
       </body>
