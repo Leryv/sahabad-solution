@@ -29,10 +29,9 @@ export default function Promo() {
           </h2>
           <Card className="max-w-2xl bg-white mt-8 shadow-xl ">
             <CardHeader>
-              <CardTitle>Promo Menjelang Bulan Ramadhan</CardTitle>
+              <CardTitle>Promo Ramadhan</CardTitle>
               <CardDescription>
-                Nikmati diskon 15% untuk berbagai produk dan layanan favorit
-                Anda.
+                Nikmati diskon 30% untuk pemasangan All Furniture
               </CardDescription>
             </CardHeader>
             <CardFooter className="flex justify-start">
